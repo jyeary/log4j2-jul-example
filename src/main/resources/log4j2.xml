@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn"><!-- use status="trace" for troubleshooting -->
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+        </Console>
+        <File name="FILE" fileName="target/com.bluelotussoftware.logging.Main.log">
+            <PatternLayout>
+                <pattern>%d %p [%t] %c{1.} %m%n</pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="STDOUT" level="info" />
+            <AppenderRef ref="FILE" />
+        </Root>
+    </Loggers>
+</Configuration>
